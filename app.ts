@@ -158,4 +158,65 @@ new bottlemaker("hi",900)
 // after public(access modifiyer ) ke baad readonly lagane par hum bus pad sakte h
 
 
+// get and set
+class User {
+    constructor(public _name:string,public age:number){}
+    get Name(){
+        return this._name
+    }
 
+    set Name(value:string){
+        this._name = value
+    }
+
+}
+
+let u1 = new User("hi" , 76)
+
+// static  member dont include in instance of the class
+class shery{
+    static version = 1.0
+}
+
+
+// generics 
+//generic function
+
+function logger<T>(a:T){
+
+}
+
+logger<String>("hey")
+logger<Number>(78)
+
+// generic interface
+interface ha<T>{
+    name: string
+    age :  number
+    key : T
+}
+
+function p(obj:ha<string>){}
+
+p({name:"fo",age:25 , key:"hjbjh"})
+
+// generic function
+class bottlemamker<T>{
+    constructor(public key:T){
+    }
+
+}
+
+let y1 = new bottlemamker<string>("hey")
+
+
+//modules
+import{onlinepayment} from "./app1"
+
+// in export default we dont use {}
+
+onlinepayment()
+
+
+//type gaurds  -> type narrowing
+// typeof  insaenceof 
